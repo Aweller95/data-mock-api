@@ -1,8 +1,10 @@
 # mock-anything-api
 
+The mock-anything API generates an array of objects which match a provided schema.
+
 ## How to use
 
-mock-anything works by providing a schema and a quantity to the `POST` endpoint `/generate`. The API will generate an array of objects which match the provided schema.
+mock-anything works by providing a schema and a quantity to the `POST` endpoint `/generate`.
 
 ### Currently supported data types
 
