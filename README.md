@@ -13,7 +13,7 @@ mock-anything works by providing a schema and a quantity to the `POST` endpoint 
 
 An example `POST` body:
 
-`JSON
+```JSON
 {
     "quantity": 2,
     "schema": {
@@ -25,11 +25,11 @@ An example `POST` body:
         "boolean": "boolean"
     }
 }
-`
+```
 
 returns:
 
-`JSON
+```JSON
 {
     "data": [
         {
@@ -50,7 +50,7 @@ returns:
         },
     ]
 }
-`
+```
 
 ## Local development
 
