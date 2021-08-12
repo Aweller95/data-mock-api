@@ -1,12 +1,14 @@
-# mock-anything-api
+# data-mock-api
 
-The mock-anything API generates an array of objects which match a provided schema.
+The data-mock API generates an array of objects which match a provided schema.
 
 ## How to use
 
-mock-anything works by providing a schema and a quantity to the `POST` endpoint `/generate`.
+data-mock works by providing a schema and a quantity to the `POST` endpoint `/generate`.
 
-### Currently supported data types
+API available at: `https://data-mock-api.herokuapp.com`.
+
+### Supported data types
 
 - `string` - currently returns a single, random word
 - `email` - returns a randomly generated, fake email address
