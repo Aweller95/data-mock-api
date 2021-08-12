@@ -1,19 +1,10 @@
 const types = ['string', 'email', 'number', 'date', 'boolean'];
-const defaultSchema = {
-  firstName: 'string',
-  lastName: 'string',
-  age: 'number',
-  birthday: 'date',
-  boolean: 'boolean',
-  email: 'email',
-};
-
 const strings = ['lorem', 'ipsum', 'dolar', 'set', 'amit'];
 const emailEnds = ['com', 'co.uk', 'io'];
 
 const randEl = arr => arr[Math.floor(Math.random() * arr.length)];
 
-const number = () => Math.floor(Math.random()) * 100;
+const number = () => Math.floor(Math.random() * 100);
 const boolean = () => Math.random() < 0.5;
 const date = () => new Date();
 const email = () =>
@@ -30,32 +21,34 @@ const validateSchema = schema => {
 };
 
 const buildObj = obj => {
-  const keys = Object.keys(obj);
-  let builtObj = {};
+  let constructObj = {};
 
-  keys.forEach(el => {
+  Object.keys(obj).forEach(el => {
     if (obj[el] === 'string') {
-      builtObj[el] = randEl(strings);
+      constructObj[el] = randEl(strings);
     }
     if (obj[el] === 'email') {
-      builtObj[el] = email();
+      constructObj[el] = email();
     }
     if (obj[el] === 'number') {
-      builtObj[el] = number();
+      constructObj[el] = number();
     }
     if (obj[el] === 'date') {
-      builtObj[el] = date();
+      constructObj[el] = date();
     }
     if (obj[el] === 'boolean') {
-      builtObj[el] = boolean();
+      constructObj[el] = boolean();
     }
   });
 
-  return builtObj;
+  return constructObj;
 };
 
 module.exports = generate = (schema, quantity = 1) => {
+  if (!schema) throw new Error('Schema must be provided');
+
   validateSchema(schema);
+
   const data = [];
 
   for (let i = 0; i < quantity; i++) {
